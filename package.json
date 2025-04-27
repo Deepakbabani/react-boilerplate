@@ -1,6 +1,6 @@
 {
   "name": "@deepakbabani/react-boilerplate",
-  "version": "1.0.1",
+  "version": "1.0.10",
   "description": "A CLI tool to generate React + TypeScript boilerplate with state management options",
   "main": "src/index.ts",
   "scripts": {
@@ -28,7 +28,7 @@
     "typescript": "^5.8.3"
   },
   "bin": {
-    "react-boilerplate": "./src/index.ts"
+    "react-boilerplate": "./dist/src/index.js"
   },
   "author": "Deepak Babani",
   "license": "MIT",
@@ -39,6 +39,7 @@
   "homepage": "https://github.com/Deepakbabani/react-boilerplate#readme",
   "files": [
     "dist",
+    "src/templates",
     "package.json",
     "README.md"
   ]

@@ -6,11 +6,16 @@ async function copyTemplate(
   userName: string,
   stateManagementChoice: string
 ) {
-  const templatePath = `templates/${stateManagementChoice}`;
+  const templatePath = path.resolve(
+    __dirname,
+    "..",
+    "templates",
+    stateManagementChoice
+  );
 
   // If the template path does not exist, throw an error
   if (!fs.existsSync(templatePath)) {
-    console.error("❌ Template not found!");
+    console.error(`❌ Template not found at path: ${templatePath}`);
     process.exit(1);
   }
 
@@ -25,11 +30,15 @@ async function copyFiles(
 ) {
   const files = fs.readdirSync(templatePath);
 
-  files.forEach((file) => {
+  console.log(
+    `Copying template files from: ${templatePath} to: ${projectName}`
+  );
+
+  for (const file of files) {
     // Skip copying node_modules and package-lock.json
     if (file === "node_modules" || file === "package-lock.json") {
       console.log(`⏭️ Skipping file/folder: ${file}`);
-      return; // Skip this file/folder
+      continue; // Skip this file/folder
     }
 
     const currentPath = path.join(templatePath, file);
@@ -38,7 +47,7 @@ async function copyFiles(
     const stats = fs.statSync(currentPath);
     if (stats.isDirectory()) {
       fs.mkdirSync(destPath, { recursive: true });
-      copyFiles(currentPath, userName, destPath);
+      await copyFiles(currentPath, userName, destPath); // Use await here for recursion
     } else {
       let content = fs.readFileSync(currentPath, "utf8");
       if (file === "App.tsx") {
@@ -49,7 +58,7 @@ async function copyFiles(
       }
       fs.writeFileSync(destPath, content);
     }
-  });
+  }
 }
 
 export { copyTemplate };
