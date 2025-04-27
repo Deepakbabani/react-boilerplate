@@ -4,7 +4,8 @@
   "description": "A CLI tool to generate React + TypeScript boilerplate with state management options",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "ts-node src/index.ts"
+    "dev": "ts-node src/index.ts",
+    "build": "tsc"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
@@ -35,5 +36,10 @@
     "type": "git",
     "url": "git+https://github.com/Deepakbabani/react-boilerplate.git"
   },
-  "homepage": "https://github.com/Deepakbabani/react-boilerplate#readme"
+  "homepage": "https://github.com/Deepakbabani/react-boilerplate#readme",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ]
 }
