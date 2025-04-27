@@ -1,6 +1,6 @@
 {
   "name": "@deepakbabani/react-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI tool to generate React + TypeScript boilerplate with state management options",
   "main": "src/index.ts",
   "scripts": {
