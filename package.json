@@ -1,0 +1,39 @@
+{
+  "name": "@deepakbabani/react-boilerplate",
+  "version": "1.0.0",
+  "description": "A CLI tool to generate React + TypeScript boilerplate with state management options",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.7",
+    "axios": "^0.21.4",
+    "eslint": "^7.32.0",
+    "inquirer": "^8.0.0",
+    "jotai": "^1.13.1",
+    "prettier": "^2.0.0",
+    "react-redux": "^7.2.9",
+    "react-router-dom": "^5.3.4",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0",
+    "vite": "^2.0.0",
+    "zustand": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^22.15.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "bin": {
+    "react-boilerplate": "./src/index.ts"
+  },
+  "author": "Deepak Babani",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deepakbabani/react-boilerplate.git"
+  },
+  "homepage": "https://github.com/Deepakbabani/react-boilerplate#readme"
+}
