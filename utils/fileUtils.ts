@@ -30,10 +30,6 @@ async function copyFiles(
 ) {
   const files = fs.readdirSync(templatePath);
 
-  console.log(
-    `Copying template files from: ${templatePath} to: ${projectName}`
-  );
-
   for (const file of files) {
     // Skip copying node_modules and package-lock.json
     if (file === "node_modules" || file === "package-lock.json") {

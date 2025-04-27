@@ -1,11 +1,12 @@
 {
   "name": "@deepakbabani/react-boilerplate",
-  "version": "1.0.10",
+  "version": "1.0.14",
   "description": "A CLI tool to generate React + TypeScript boilerplate with state management options",
   "main": "src/index.ts",
   "scripts": {
     "dev": "ts-node src/index.ts",
-    "build": "tsc"
+    "build": "tsc && npm run copy-templates",
+    "copy-templates": "node copy-templates.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
     "@types/node": "^22.15.2",
+    "fs-extra": "^11.3.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
@@ -39,7 +41,7 @@
   "homepage": "https://github.com/Deepakbabani/react-boilerplate#readme",
   "files": [
     "dist",
-    "src/templates",
+    "templates",
     "package.json",
     "README.md"
   ]

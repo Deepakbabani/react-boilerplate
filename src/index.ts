@@ -26,8 +26,6 @@ async function createProject() {
       fs.mkdirSync(projectPath);
     }
 
-    console.log("\n🔧 Installing required dependencies...");
-
     // Installing required dependencies for each template
     await installDependencies(projectName, stateManagementChoice);
 
